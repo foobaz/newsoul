@@ -35,6 +35,7 @@
 #include <netinet/ip.h>
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <string.h>
 
 #ifndef UNIX_PATH_MAX
 #define UNIX_PATH_MAX 108
