@@ -15,7 +15,7 @@ This is *only* the daemon/server part, no clients (besides CLI) are developed he
 * sqlite3 >= 3.7.4
 * pcre
 * C++11 capable compiler (for compilation)
-* premake4 (for compilation)
+* premake5 (for compilation)
 * CppUTest (for test-suite)
 * python2.x (for bindings and some misc utils)
 * pycrypto (for bindings and some misc utils)
@@ -24,9 +24,9 @@ This is *only* the daemon/server part, no clients (besides CLI) are developed he
 
 ```sh
 $ cd build
-$ premake4 gmake  # see premake4 --help for other options
+$ premake5 gmake  # see premake5 --help for other options
 $ make newsoul
-# premake4 install
+# premake5 install
 ```
 
 ## usage

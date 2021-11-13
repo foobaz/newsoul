@@ -12,7 +12,7 @@ newaction {
     trigger = "install",
     description = "Install binary files to system location(s) [you have to build the project first]",
     execute = function()
-        if not os.is("windows") then
+        if not os.istarget("windows") then
             prefix = _OPTIONS["prefix"]
             print("Installing newsoul binary")
             binpath = path.join(prefix, "bin")
@@ -39,7 +39,7 @@ function link(tests)
         links {"CppUTest", "CppUTestExt"}
     end
 
-    if os.is("bsd") then
+    if os.istarget("bsd") then
         links {"iconv"}
     end
 end
@@ -48,17 +48,20 @@ solution "newsoul"
     targetdir "bin"
     configurations {"release", "debug"}
     language "C++"
-    flags {"ExtraWarnings"}
+    -- flags {"ExtraWarnings"}
+    warnings "Extra"
     buildoptions {"-std=c++11"}
 
     configuration "debug"
         defines {"DEBUG"}
-        flags {"Symbols"}
+        -- flags {"Symbols"}
+        symbols "On"
         buildoptions {"-ggdb3", "-O0", "-fno-inline"}
 
     configuration "release"
         defines {"NDEBUG"}
-        flags {"Optimize"}
+        -- flags {"Optimize"}
+        optimize "On"
 
     project "newsoul"
         kind "ConsoleApp"
